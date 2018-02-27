@@ -24,11 +24,16 @@ import { DataTableModule } from "angular2-datatable";
 // Servicios
 import { PlatoService } from './_service/plato.service';
 import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
+import { ConsumoService } from './_service/consumo.service';
+import { ConsultaService } from './_service/consulta.service';
+import { ClienteService } from './_service/cliente.service';
 // Http
 import { HttpClientModule } from '@angular/common/http';
 // ngx
 import { ModalModule } from 'ngx-bootstrap';
 import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm-modal.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +59,7 @@ import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm
     ReactiveFormsModule,
     ModalModule.forRoot()
   ],
-  providers: [PlatoService],
+  providers: [PlatoService, ConsumoService, ConsultaService, ClienteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
