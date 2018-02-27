@@ -14,6 +14,10 @@ import { PlatoComponent } from './plato/plato.component';
 import { ComboboxDirective } from './_directive/combobox.directive';
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
+import { PlatoListaComponent } from './plato/plato-lista/plato-lista.component';
+import { PlatoDetalleComponent } from './plato/plato-detalle/plato-detalle.component';
+import { PlatoEdicionComponent } from './plato/plato-edicion/plato-edicion.component';
+import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     HeaderComponent,
     PlatoComponent,
-    ComboboxDirective
+    ComboboxDirective,
+    PlatoListaComponent,
+    PlatoDetalleComponent,
+    PlatoEdicionComponent,
+    PlatoInicioComponent
   ],
   imports: [
     BrowserModule,
