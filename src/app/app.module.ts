@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+// Componentes
 import { AppComponent } from './app.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ConsumoComponent } from './consumo/consumo.component';
