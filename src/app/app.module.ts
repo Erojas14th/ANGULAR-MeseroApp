@@ -12,12 +12,17 @@ import { HeaderComponent } from './header/header.component';
 import { PlatoComponent } from './plato/plato.component';
 // Directivas
 import { ComboboxDirective } from './_directive/combobox.directive';
-// Modulos
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { PlatoListaComponent } from './plato/plato-lista/plato-lista.component';
 import { PlatoDetalleComponent } from './plato/plato-detalle/plato-detalle.component';
 import { PlatoEdicionComponent } from './plato/plato-edicion/plato-edicion.component';
 import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.component';
+//Modulos
+import { FormsModule } from '@angular/forms';
+import { DataTableModule } from "angular2-datatable";
+// Servicios
+import { PlatoService } from './_service/plato.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +40,11 @@ import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    DataTableModule
   ],
-  providers: [],
+  providers: [PlatoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
