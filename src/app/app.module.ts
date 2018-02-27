@@ -19,12 +19,13 @@ import { PlatoDetalleComponent } from './plato/plato-detalle/plato-detalle.compo
 import { PlatoEdicionComponent } from './plato/plato-edicion/plato-edicion.component';
 import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.component';
 //Modulos
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { DataTableModule } from "angular2-datatable";
 // Servicios
 import { PlatoService } from './_service/plato.service';
 import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
-
+// Http
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,9 @@ import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DataTableModule
+    DataTableModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PlatoService],
   bootstrap: [AppComponent]

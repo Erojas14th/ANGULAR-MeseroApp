@@ -25,7 +25,11 @@ export class PlatoDetalleComponent implements OnInit {
         this.id = params['id']; //es el que esta definido en el routing
         console.log(this.id);
 
-        this.plato = this.platoService.getPlatos()[this.id];
+        //Ahora usaremos el service de Mongo
+       // this.plato = this.platoService.getPlatos()[this.id];
+       this.platoService.getPlato(this.id).subscribe(data =>{
+         this.plato=data;
+       });
         console.log(this.plato);
       }
     )

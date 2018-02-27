@@ -19,7 +19,19 @@ export class PlatoListaComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.platos=this.platoService.getPlatos();
-  }
+    //  Ahora consumimos un servicio , este retorna un observable
+    //  this.platos=this.platoService.getPlatos();
+    this.platoService.getPlatos().subscribe(data =>{
+      this.platos=data;
 
+      // Para ver los cambios de los datos llamaremos a platosCambio
+      this.platoService.platosCambio.subscribe(data=>{
+        this.platos=data;
+      });
+    });
+
+  }
+  crearNuevoPlato() {
+    this.router.navigate(['nuevo'], { relativeTo: this.route });
+  }
 }
