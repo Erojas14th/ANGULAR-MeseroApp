@@ -8,6 +8,7 @@ import { ConsumoComponent } from './consumo/consumo.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PlatoComponent } from './plato/plato.component';
+import { ComboboxDirective } from './_directive/combobox.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PlatoComponent } from './plato/plato.component';
     ConsumoComponent,
     FooterComponent,
     HeaderComponent,
-    PlatoComponent
+    PlatoComponent,
+    ComboboxDirective
   ],
   imports: [
     BrowserModule
