@@ -26,6 +26,9 @@ import { PlatoService } from './_service/plato.service';
 import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
 // Http
 import { HttpClientModule } from '@angular/common/http';
+// ngx
+import { ModalModule } from 'ngx-bootstrap';
+import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     PlatoDetalleComponent,
     PlatoEdicionComponent,
     PlatoInicioComponent,
-    PlatoFilterPipe
+    PlatoFilterPipe,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     DataTableModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   providers: [PlatoService],
   bootstrap: [AppComponent]

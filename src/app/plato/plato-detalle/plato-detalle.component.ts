@@ -42,4 +42,10 @@ export class PlatoDetalleComponent implements OnInit {
   editarPlato(){
     this.router.navigate(['editar'], { relativeTo: this.route });
   }
+  eliminarPlato(event:boolean, plato: Plato){
+    if(event){
+      this.platoService.eliminarPlato(plato);
+      this.router.navigate(['plato']);
+    }
+  }
 }
