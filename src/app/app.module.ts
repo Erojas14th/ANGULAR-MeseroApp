@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { DataTableModule } from "angular2-datatable";
 // Servicios
 import { PlatoService } from './_service/plato.service';
+import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PlatoService } from './_service/plato.service';
     PlatoListaComponent,
     PlatoDetalleComponent,
     PlatoEdicionComponent,
-    PlatoInicioComponent
+    PlatoInicioComponent,
+    PlatoFilterPipe
   ],
   imports: [
     BrowserModule,
