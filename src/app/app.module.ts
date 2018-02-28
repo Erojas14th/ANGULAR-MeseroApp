@@ -27,6 +27,8 @@ import { PlatoFilterPipe } from './_pipe/plato-filter.pipe';
 import { ConsumoService } from './_service/consumo.service';
 import { ConsultaService } from './_service/consulta.service';
 import { ClienteService } from './_service/cliente.service';
+import { LoginService } from './_service/login.service';
+import { LoginGuard } from './_service/login-guard.service';
 // Http
 import { HttpClientModule } from '@angular/common/http';
 // ngx
@@ -39,6 +41,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { Ng2CompleterModule } from "ng2-completer";
 import { DatePickerComponent } from './componentes/pickers/date-picker/date-picker.component';
 import { SimpleModalComponent } from './componentes/modal/simple-modal/simple-modal.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { SimpleModalComponent } from './componentes/modal/simple-modal/simple-mo
     PlatoFilterPipe,
     ConfirmModalComponent,
     DatePickerComponent,
-    SimpleModalComponent
+    SimpleModalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +75,7 @@ import { SimpleModalComponent } from './componentes/modal/simple-modal/simple-mo
     BsDatepickerModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [PlatoService, ConsumoService, ConsultaService, ClienteService ],
+  providers: [PlatoService, ConsumoService, ConsultaService, ClienteService,LoginService, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

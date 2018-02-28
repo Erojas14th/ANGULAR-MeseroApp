@@ -8,7 +8,8 @@ import { PlatoComponent } from './plato/plato.component';
 import { PlatoDetalleComponent } from './plato/plato-detalle/plato-detalle.component';
 import { PlatoEdicionComponent } from './plato/plato-edicion/plato-edicion.component';
 import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.component';
-
+import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './_service/login-guard.service';
 // Navegaciones : Url y sus componentes
 const appRoutes: Routes = [
     { path: 'plato', component: PlatoComponent, children: [
@@ -16,10 +17,11 @@ const appRoutes: Routes = [
         { path: 'nuevo', component: PlatoEdicionComponent}, 
         { path: ':id', component: PlatoDetalleComponent}, 
         { path: ':id/editar', component: PlatoEdicionComponent}
-    ]},
-    { path: 'consumo', component: ConsumoComponent},
-    { path: 'consulta', component: ConsultaComponent},
-    { path: '', redirectTo: 'plato', pathMatch: 'full'}
+    ], canActivate: [LoginGuard]},
+    { path: 'consumo', component: ConsumoComponent, canActivate: [LoginGuard] },
+    { path: 'consulta', component: ConsultaComponent, canActivate: [LoginGuard]},
+    { path: '', redirectTo: 'login', pathMatch: 'full'},
+    { path: 'login', component: LoginComponent}, 
 ]
 
 @NgModule({
