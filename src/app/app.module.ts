@@ -32,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
 // ngx
 import { ModalModule } from 'ngx-bootstrap';
 import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm-modal.component';
-
+// autocompletado
+import { Ng2CompleterModule } from "ng2-completer";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm
     DataTableModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    Ng2CompleterModule
   ],
   providers: [PlatoService, ConsumoService, ConsultaService, ClienteService ],
   bootstrap: [AppComponent]
