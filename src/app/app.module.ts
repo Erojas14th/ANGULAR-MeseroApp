@@ -32,8 +32,13 @@ import { HttpClientModule } from '@angular/common/http';
 // ngx
 import { ModalModule } from 'ngx-bootstrap';
 import { ConfirmModalComponent } from './componentes/modal/confirm-modal/confirm-modal.component';
+import { TabsModule } from 'ngx-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap';
+import { AlertModule } from 'ngx-bootstrap';
 // autocompletado
 import { Ng2CompleterModule } from "ng2-completer";
+import { DatePickerComponent } from './componentes/pickers/date-picker/date-picker.component';
+import { SimpleModalComponent } from './componentes/modal/simple-modal/simple-modal.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +54,9 @@ import { Ng2CompleterModule } from "ng2-completer";
     PlatoEdicionComponent,
     PlatoInicioComponent,
     PlatoFilterPipe,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    DatePickerComponent,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,10 @@ import { Ng2CompleterModule } from "ng2-completer";
     HttpClientModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    Ng2CompleterModule
+    Ng2CompleterModule,
+    TabsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [PlatoService, ConsumoService, ConsultaService, ClienteService ],
   bootstrap: [AppComponent]
