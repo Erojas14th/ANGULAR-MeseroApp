@@ -12,9 +12,10 @@ export class LoginGuard implements CanActivate{
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
         let rpta = this.loginService.estaLogeado();
-        if(!rpta){
+        if(+rpta !== 1){
             this.router.navigate(['login']);
+            return false;
         }
-        return rpta;
+        return true;
     }
 }
